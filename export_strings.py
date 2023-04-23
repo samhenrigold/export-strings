@@ -33,7 +33,6 @@ def process_executables(source, output, command):
 
     for full_path, output_path in find_executables(source, output):
         output = subprocess.check_output(command + [full_path])
-        # open(output_path, "w+").write(output)
         with open(output_path, "wb") as file:
             file.write(output)
 
