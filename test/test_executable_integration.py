@@ -10,7 +10,7 @@ class ExecutableFixtureTests(unittest.TestCase):
         files = map(lambda x: x[0],
                     list(export_strings.find_files(helpers.FIXTURE_PATH,
                                                    lambda x: True)))
-        self.assertEqual(len(files), 4)
+        self.assertEqual(len(list(files)), 4)
         self.assertIn("executable", files)
         self.assertIn("nested/nested_executable", files)
         self.assertIn("not_executable", files)
